@@ -1,10 +1,6 @@
-
-FROM openjdk:11-slim
-
+#dockerfile
+FROM openjdk:11-jre-slim
 WORKDIR /app
-
-COPY target/DockerKubernetesAssignment-0.0.1-SNAPSHOT.jar app.jar
-
+COPY target/DockerKubernetesAssignment-0.0.1-SNAPSHOT.jar /app/
 EXPOSE 8080
-
-ENTRYPOINT ["java", "-jar", "app.jar"]
+CMD ["java", "-jar", "DockerKubernetesAssignment-0.0.1-SNAPSHOT.jar"]
